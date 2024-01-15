@@ -1,10 +1,6 @@
 package model;
 
-<<<<<<< HEAD
-public class DAO {
-	
-}
-=======
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -40,4 +36,3 @@ public class DAO {
 	}//getClose()
 	
 }//DAO
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-BigData-21/Jihoteam.git
