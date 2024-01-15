@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DAO {
-	
+
+public class DAO {	
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
@@ -34,5 +34,5 @@ public class DAO {
 			e.printStackTrace();
 		}//try-catch
 	}//getClose()
-	
+
 }//DAO

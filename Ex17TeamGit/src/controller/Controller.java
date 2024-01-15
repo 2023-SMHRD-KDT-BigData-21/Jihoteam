@@ -1,5 +1,7 @@
 package controller;
 
+import model.DAO;
+
 public class Controller {
-	Controller con = new Controller();
+	DAO dao = new DAO();
 }
