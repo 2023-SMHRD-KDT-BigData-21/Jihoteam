@@ -1,6 +1,6 @@
 package model;
 
-public class Member_VO { 
+public class MemberVO { 
 
 	private String id;
 	private String pw;
@@ -13,13 +13,13 @@ public class Member_VO {
 	public int stress;
 	public int exp;
 
-	public Member_VO(String id, String type, String name) {
+	public MemberVO(String id, String type, String name) {
 		this.id = id;
 		this.type = type;
 		this.name = name;
 	}
 
-	public Member_VO(String id, String pw) {
+	public MemberVO(String id, String pw) {
 		this.id = id;
 		this.pw = pw;
 	}

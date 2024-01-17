@@ -1,6 +1,6 @@
 package model;
 
-public class Cat_VO {
+public class CatVO {
 	public String type;
 	public String info;
 
