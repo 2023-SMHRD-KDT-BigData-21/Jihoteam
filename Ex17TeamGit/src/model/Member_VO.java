@@ -1,7 +1,7 @@
 package model;
 
 public class Member_VO {
-	
+
 	private String id;
 	private String pw;
 	public int rank;
@@ -12,7 +12,7 @@ public class Member_VO {
 	public int date;
 	public int stress;
 	public int exp;
-	
+
 	public Member_VO(String id, String type, String name) {
 		this.id = id;
 		this.type = type;
@@ -95,9 +95,5 @@ public class Member_VO {
 	public String getPw() {
 		return pw;
 	}
-	
-	
-	
-	
 
 }
