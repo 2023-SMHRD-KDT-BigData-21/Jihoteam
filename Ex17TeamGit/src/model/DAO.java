@@ -119,7 +119,7 @@ public class DAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, member.getType());
 			psmt.setString(2, member.getName());
-			psmt.setString(2, member.getId());
+			psmt.setString(3, member.getId());
 			row = psmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -163,4 +163,100 @@ public class DAO {
 		
 		return memList;
 	} // selectList
+	
+//	스트레스 수치 업데이트 메소드
+	public int updateStress(MemberVO member) {
+		getConn();
+		int row = 0;
+		try {
+			String sql = "update member_db set c_stress=? where id=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setLong(1, member.getStress());
+			psmt.setString(2, member.getId());
+			row = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		} // try-catch
+		return row;
+	} // updateStress
+	
+//	Exp 수치 업데이트 메소드	
+	public int updateExp(MemberVO member) {
+		getConn();
+		int row = 0;
+		try {
+			String sql = "update member_db set c_exp=? where id=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setLong(1, member.getExp());
+			psmt.setString(2, member.getId());
+			row = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		} // try-catch
+		return row;
+	}//updateExp
+	
+//	Lvl 수치 업데이트 메소드
+	public int updateLvl(MemberVO member) {
+		getConn();
+		int row = 0;
+		try {
+			String sql = "update member_db set c_lvl=? where id=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setLong(1, member.getLvl());
+			psmt.setString(2, member.getId());
+			row = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		} // try-catch
+		return row;
+	}//updateLvl
+	
+//	Tired 수치 업데이트 메소드
+	public int updateTired(MemberVO member) {
+		getConn();
+		int row = 0;
+		try {
+			String sql = "update member_db set c_tired=? where id=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setLong(1, member.getTired());
+			psmt.setString(2, member.getId());
+			row = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		} // try-catch
+		return row;
+	}//updateTired
+	
+//	Date 수치 업데이트 메소드
+	public int updateDate(MemberVO member) {
+		getConn();
+		int row = 0;
+		try {
+			String sql = "update member_db set c_date=? where id=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setLong(1, member.getLvl());
+			psmt.setString(2, member.getId());
+			row = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		} // try-catch
+		return row;
+	}//updateDate
+	
 }// DAO
