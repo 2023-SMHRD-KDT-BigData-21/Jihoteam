@@ -150,16 +150,16 @@ public class DAO {
 		return row;
 	} // enrollCat
 	
-	//회원정보조회 메소드
-	public ArrayList<MemberVO> selectList() {
+	//특정 회원 정보 조회 메소드
+	public MemberVO selectMem() {
 		getConn();
-		ArrayList<MemberVO> memList = new ArrayList<MemberVO>();
+		MemberVO member = null;
 		try {
-			String sql = "select * from member_db";
+			String sql = "select * from member_db where id = ?";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 						
-			while(rs.next()) {
+			if(rs.next()) {
 				String id = rs.getString(1);
 				String pw = rs.getString(2);
 				int rank = rs.getInt(3);
@@ -170,7 +170,7 @@ public class DAO {
 				int stress = rs.getInt(8);
 				int exp = rs.getInt(9);
 				int date = rs.getInt(10);
-				memList.add(new MemberVO(id,pw,rank,type,name,level,tired,stress,exp,date));
+				member = new MemberVO(id,pw,rank,type,name,level,tired,stress,exp,date);
 			}
 			
 		} catch (Exception e) {
@@ -181,7 +181,7 @@ public class DAO {
 			
 		} // try - catch
 		
-		return memList;
+		return member;
 	} // selectList
 	
 //	스트레스 수치 업데이트 메소드
