@@ -1,6 +1,6 @@
 package model;
 
-public class Member_VO {
+public class Member_VO { 
 
 	private String id;
 	private String pw;

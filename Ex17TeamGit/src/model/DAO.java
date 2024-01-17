@@ -12,9 +12,9 @@ public class DAO {
 
 	public void getConn() {
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "service";
-		String pw = "12345";
+		String url = "jdbc:oracle:thin:@project-db-campus.smhrd.com:1523:xe";
+		String user = "seocho_21K_bigdata_mini_3";
+		String pw = "smhrd3";
 
 		try {
 			Class.forName(driver);
