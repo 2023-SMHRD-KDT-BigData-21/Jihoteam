@@ -87,7 +87,7 @@ public class DAO {
 		getConn();
 		String name = null;
 		try {
-			String sql = "select name from jdbc_member where id=? and pw=?";
+			String sql = "select id from member_db where id=? and pw=?";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -110,6 +110,26 @@ public class DAO {
 		return name;
 	} //login
 
+//	회원탈퇴 메소드
+	public int delete(MemberVO member) {
+		getConn();
+		int row=0;
+		try {
+			String sql = "delete from member_db where id=? and pw=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, member.getId());
+			psmt.setString(2, member.getPw());
+			
+			row = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return row;
+	}//회원탈퇴 메소드
+	
 	//고양이 정보 등록 메소드
 	public int enrollCat(MemberVO member) {
 		getConn();
