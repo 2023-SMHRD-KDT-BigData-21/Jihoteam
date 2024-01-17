@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class DAO {
 	Connection conn = null;
@@ -110,7 +111,7 @@ public class DAO {
 	} //login
 
 	//고양이 정보 등록 메소드
-	public int updateCat(MemberVO member) {
+	public int enrollCat(MemberVO member) {
 		getConn();
 		int row = 0;
 		try {
@@ -127,5 +128,39 @@ public class DAO {
 			getClose();
 		} // try-catch
 		return row;
-	} // updateCat
+	} // enrollCat
+	
+	//회원정보조회 메소드
+	public ArrayList<MemberVO> selectList() {
+		getConn();
+		ArrayList<MemberVO> memList = new ArrayList<MemberVO>();
+		try {
+			String sql = "select * from member_db";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+						
+			while(rs.next()) {
+				String id = rs.getString(1);
+				String pw = rs.getString(2);
+				int rank = rs.getInt(3);
+				String type = rs.getString(4);
+				String name = rs.getString(5);
+				int level = rs.getInt(6);
+				int tired = rs.getInt(7);
+				int stress = rs.getInt(8);
+				int exp = rs.getInt(9);
+				int date = rs.getInt(10);
+				memList.add(new MemberVO(id,pw,rank,type,name,level,tired,stress,exp,date));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		} finally {
+			getClose();
+			
+		} // try - catch
+		
+		return memList;
+	} // selectList
 }// DAO

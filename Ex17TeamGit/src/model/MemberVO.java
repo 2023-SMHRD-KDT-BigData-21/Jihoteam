@@ -13,6 +13,22 @@ public class MemberVO {
 	public int stress;
 	public int exp;
 
+	
+	public MemberVO(String id, String pw, int rank, String type, String name, int lvl, int tired, int date, int stress,
+			int exp) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.rank = rank;
+		this.type = type;
+		this.name = name;
+		this.lvl = lvl;
+		this.tired = tired;
+		this.date = date;
+		this.stress = stress;
+		this.exp = exp;
+	}
+	
 	public MemberVO(String id, String type, String name) {
 		this.id = id;
 		this.type = type;
