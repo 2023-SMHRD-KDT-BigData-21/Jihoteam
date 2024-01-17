@@ -24,8 +24,6 @@ public class PracticeMain {
 			e.printStackTrace();
 		}
 		
-		
-
 	}
 
 }
