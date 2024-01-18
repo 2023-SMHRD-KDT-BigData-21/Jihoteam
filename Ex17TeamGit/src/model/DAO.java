@@ -223,14 +223,43 @@ public class DAO {
 	}//updateExp
 	
 //	Lvl 수치 업데이트 메소드
-	public int updateLvl(MemberVO member, int lvl) {
+	public int updateLvl(MemberVO member) {
 		getConn();
-		int row = 0;
+		int lvl = member.getLvl();
+		int exp = member.getExp();
+		if(lvl==1) {
+			if(exp>=50) {
+				exp = 0;
+				lvl++;
+			}
+		}else if(lvl==2) {
+			if(exp>=70) {
+				exp = 0;
+				lvl++;
+			}
+		}else if(lvl==3) {
+			if(exp>=100) {
+				exp = 0;
+				lvl++;
+			}
+		}else if(lvl==4) {
+			if(exp>=100) {
+				exp = 0;
+				lvl++;
+			}
+		}else if(lvl==5) {
+			if(exp>=100) {
+				exp = 0;
+				lvl++;
+			}
+		}
+		int row = 0;	
 		try {
-			String sql = "update member_db set c_lvl=? where id=?";
+			String sql = "update member_db set c_exp=?, c_lvl=? where id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setLong(1, member.getLvl() + lvl);
-			psmt.setString(2, member.getId());
+			psmt.setLong(1, exp);
+			psmt.setLong(2, lvl);
+			psmt.setString(3, member.getId());
 			row = psmt.executeUpdate();
 
 		} catch (Exception e) {
