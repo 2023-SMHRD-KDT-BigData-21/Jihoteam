@@ -29,7 +29,12 @@ public class MemberController {
 			String id = mdao.login(member);
 			return id;
 		}
-		
+
+//		회원 정보 조회
+		public MemberVO joinMemberDB(String id) {
+			MemberVO member= mdao.selectMem(id);
+			return member; // 유효한 id면 값 return, 아니면 null return
+		}
 //		회원탈퇴
 		public String deleteConn(MemberVO member) {
 			int row = mdao.delete(member);

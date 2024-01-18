@@ -8,7 +8,7 @@ import model.MemberVO;
 
 public class Main {
 	static Scanner sc = new Scanner(System.in);//
-	static MemberController  con = new MemberController();//
+	static MemberController  mCon = new MemberController();//
 	static CatController ccon = new CatController();
 
 //	public static int inputMenu1() {
@@ -36,6 +36,7 @@ public class Main {
 				String id = doLogin();
 				if (id != null) {
 					System.out.println("로그인 성공");
+					MemberVO member = mCon.joinMemberDB(id);
 					if (id != null && member.name == null) {//id는 존재하지만 동물정보는 없으면
 						System.out.println("앞으로 함께할 고양이를 선택해주세요");
 						ccon.typeConn();
@@ -122,7 +123,7 @@ public class Main {
 		
 		// DB에 id, pw, name 등록하기
 		MemberVO member = new MemberVO(id,pw);
-		String result = con.joinConn(member);
+		String result = mCon.joinConn(member);
 		
 		System.out.println("회원가입에 " + result + "하셨습니다.");// 성공실패 유무 표기하기
 	} //doJoin
@@ -136,7 +137,7 @@ public class Main {
 		String pw = sc.next();
 
 		MemberVO member = new MemberVO(id,pw);
-		String result = con.loginConn(member);
+		String result = mCon.loginConn(member);
 		
 		return result;
 	} //doLogin
