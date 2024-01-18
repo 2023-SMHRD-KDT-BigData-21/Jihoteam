@@ -52,11 +52,9 @@ public class Main {
 				else {//일치하는 아이디가 없으면
 					System.out.println("아이디와 비밀번호를 확인하세요");
 				}
-<<<<<<< HEAD
 				if (id2 != null && member.name == null) {//id는 존재하지만 동물정보는 없으면
 					System.out.println("앞으로 함께할 고양이를 선택해주세요");
 					System.out.println("1)페르시안 2)샴 3)메인 쿤 4)스코티시 폴드 5)러시안 블루");
-					
 				}
 				else if (id2 != null && member.name != null){
 					while (true) {// 메인 홈페이지
@@ -157,10 +155,8 @@ public class Main {
 			} // 탈퇴
 
 			else if (menu1 == 4) {// 종료
-=======
 			}//로그인
-			else if (menu1 == 3) {// 종료
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-BigData-21/Jihoteam.git
+			else if (menu1 == 3) {// 종료//github.com/2023-SMHRD-KDT-BigData-21/Jihoteam.git
 				System.out.println("안녕히 가십시오.");
 				break;
 			} // 종료
