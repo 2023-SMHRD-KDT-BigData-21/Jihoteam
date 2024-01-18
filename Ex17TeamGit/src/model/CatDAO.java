@@ -53,7 +53,8 @@ public class CatDAO {
 			while(rs.next()) {
 				String type = rs.getString(1);
 				String info = rs.getString(2);
-				typeList.add(new CatVO(type,info));
+				String info2 = rs.getString(3);
+				typeList.add(new CatVO(type,info,info2));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

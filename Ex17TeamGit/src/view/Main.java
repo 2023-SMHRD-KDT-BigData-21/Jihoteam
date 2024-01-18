@@ -2,12 +2,14 @@ package view;
 
 import java.util.Scanner;
 
+import controller.CatController;
 import controller.MemberController;
 import model.MemberVO;
 
 public class Main {
 	static Scanner sc = new Scanner(System.in);//
 	static MemberController  con = new MemberController();//
+	static CatController ccon = new CatController();
 
 //	public static int inputMenu1() {
 //		while(true) {			
@@ -22,20 +24,6 @@ public class Main {
 //		}
 //	}
 	
-	
-	public static String doLogin() {
-		System.out.println("==로그인==");
-		System.out.print("ID : ");
-		String id = sc.next();
-		System.out.print("PW : ");
-		String pw = sc.next();
-
-		MemberVO member = new MemberVO(id,pw);
-		String result = con.loginConn(member);
-		
-		return result;
-	} 
-	
 	public static void main(String[] args) {
 		while (true) {// 초기화면
 			// 입력
@@ -47,13 +35,14 @@ public class Main {
 			else if (menu1 == 2) {// 로그인
 				String id = doLogin();
 				if (id != null) {
-
 					System.out.println("로그인 성공");
-//					if (id != null && member.name == null) {//id는 존재하지만 동물정보는 없으면
-//						System.out.println("앞으로 함께할 고양이를 선택해주세요");
-//						System.out.println("1)코숏 2)페르시안 3)먼치킨 4)노르웨이숲 5)삼색이");
-//						
-//					}					
+					if (id != null && member.name == null) {//id는 존재하지만 동물정보는 없으면
+						System.out.println("앞으로 함께할 고양이를 선택해주세요");
+						ccon.typeConn();
+						System.out.println("1)페르시안 2)샴 3)메인 쿤 4)스코티시 폴드 5)러시안 블루");
+						int cat = sc.nextInt();
+						ccon.enrollCatConn(member, cat);
+					}					
 				}else if (id == null) {
 					System.out.println("아이디와 비밀번호를 확인하세요");
 				}
@@ -136,5 +125,19 @@ public class Main {
 		String result = con.joinConn(member);
 		
 		System.out.println("회원가입에 " + result + "하셨습니다.");// 성공실패 유무 표기하기
-	}
+	} //doJoin
+	
+	//로그인
+	public static String doLogin() {
+		System.out.println("==로그인==");
+		System.out.print("ID : ");
+		String id = sc.next();
+		System.out.print("PW : ");
+		String pw = sc.next();
+
+		MemberVO member = new MemberVO(id,pw);
+		String result = con.loginConn(member);
+		
+		return result;
+	} //doLogin
 }// Main
