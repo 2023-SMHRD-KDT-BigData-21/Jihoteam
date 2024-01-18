@@ -25,7 +25,6 @@ public class MemberDAO {
 			e.printStackTrace();
 		} // try-catch
 	}// getConn()
-	
 	//DB연결 종료 메소드
 	public void getClose() {
 		try {
@@ -39,14 +38,13 @@ public class MemberDAO {
 			e.printStackTrace();
 		} // try-catch
 	}// getClose()
-
 	//회원가입 메소드
 	public int join(MemberVO member) {
 		// DB 연결 메소드 호출
 		getConn();
 		int row = 0;
 		try {
-			String sql = "insert into member_db values(?, ?)";
+			String sql =  "insert into member_db values(?, ?, 0, null, null, 0, 0, 0, 0, 0)";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -62,24 +60,26 @@ public class MemberDAO {
 		}
 		return row;
 	}
-
 	//중복 검사 메소드
-	public void checkID(String id) {
+	public boolean checkID(String id) {
 		getConn();
 		try {
-			String sql = "select id from member_db where id=?";
+			String sql = "select m_id from member_db where m_id=?";
 			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, id);
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
 				System.out.println("이미 사용중인 아이디입니다.");
+				return false;
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			getClose();
 		} // try-catch
+		return true;
 	} // checkID
 
 	
@@ -88,7 +88,7 @@ public class MemberDAO {
 		getConn();
 		String name = null;
 		try {
-			String sql = "select id from member_db where id=? and pw=?";
+			String sql = "select m_id from member_db where m_id=? and m_pw=?";
 
 			psmt = conn.prepareStatement(sql);
 
