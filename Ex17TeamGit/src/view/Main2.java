@@ -23,13 +23,29 @@ public class Main2 {
 				String id = doLogin();
 				MemberVO member = mCon.joinMemberDB(id);
 				if (id == null) {
-					System.out.println("아이디와 비밀번호를 확인하세요");
+					System.out.println("저런, ID나 PW를 틀리신 걸까요?");
+					System.out.println("고양이는 당신을 환영하지 않는 것 같습니다.");
 				}
 				else if (id != null) {
-					System.out.println("로그인 성공");
+					System.out.println(id + "님, 환영합니다.");
 					member = mCon.joinMemberDB(id);
 					if (member.name == null) {//id는 존재하지만 동물정보는 없으면
-						System.out.println("앞으로 함께할 고양이를 선택해주세요");
+						String catShop = "⠀⠀⠀⠀⠀⠀⡀⠄⠄⠄⠂⠂⠄⡀⠀⠀⠀⠀⠀⠀⠀⡠⡢⣂⠄\n"
+								+ "⠀⠀⢀⠠⠄⠔⠀⠀⠀⠀⠀⠀⠀⡈⠄⢀⡀⡠⢄⡒⡐⠤⠑⠂⠀\n"
+								+ "⢀⠊⠑⠂⠀⠀⠀⠀⠀⠀⠀⣀⡣⠾⠭⡒⠈⠈⠀⠀⠀⠀⠀⠀⠀\n"
+								+ "⠘⡀⠀⠀⠀⢀⡀⠄⣒⠩⣅⡖⡢⠖⢐⠎⡢⡀⠀⠀⠀⠀⠀⠀⠀\n"
+								+ "⠀⠐⡄⠀⢂⠅⢆⠏⠉⠰⠀⠁⠀⠀⠠⠒⡃⠄⠀⠀⠀⠀⠀⠀⠀\n"
+								+ "⠀⠀⠐⠊⠀⠘⡀⠀⡊⠍⠄⠀⠀⠀⠊⠖⠎⡄⠀⠀⠀⠀⠀⠀⠀\n"
+								+ "⠀⠀⢐⠨⡌⠄⠐⠄⠘⠃⠀⢀⣀⣀⡀⢜⢤⠰⠤⢄⡀⠀⠀⠀⠀\n"
+								+ "⠀⠀⢀⡓⡒⡎⠒⠚⡀⠤⠦⠒⠂⠒⠐⠁⠀⠀⠀⠀⠙⢄⠀⠀⠀\n"
+								+ "⠀⠀⠀⠊⠘⠰⡀⢀⢎⠀⠀⠀⠀⠀⠀⠘⠁⠀⠀⠀⠀⢙⡀⠀⠀\n"
+								+ "⠀⠀⠀⠀⠀⠀⠐⠤⡸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠁⠀⠀\n"
+								+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠈⠀⠀⠀\n"
+								+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠃⠢⠰⠄⠦⠄⠄⠖⠉⠀⠀⠀⠀⠀";
+						System.out.println(catShop);
+						System.out.println("고양이 상점 주인 :");
+						System.out.println("어서 와! 고양이를 고르러 왔지?");
+						System.out.println("여기 이 귀염둥이들 좀 보라고!");
 						ccon.typeConn();
 						System.out.println("1)페르시안 2)샴 3)메인 쿤 4)스코티시 폴드 5)러시안 블루");
 						int cat = sc.nextInt();
@@ -38,19 +54,31 @@ public class Main2 {
 						ccon.enrollCatConn(member, cat,name);
 					}else {		
 						while (true) {// 메인 홈페이지
-							System.out.println("무엇을 하시겠습니까?");
+							System.out.println("======무엇을 하시겠습니까?======");
 							System.out.print("[1]게임하기 [2]랭킹확인 [3]종료 >> ");
 							int menu2 = sc.nextInt();
 							if (menu2 == 1) {// 게임하기
-								System.out.println("무엇을 하시겠습니까?");
+								System.out.println("======무엇을 하시겠습니까?======");
 								System.out.print("[1]밥주기 [2]놀아주기 [3]낮잠자기");
 								int menu3 = sc.nextInt();
 								if (menu3 == 1) {// 밥주기
-									System.out.println("어떤걸 주시겠습니까?");
+									System.out.println("======어떤걸 주시겠습니까?======");
 									System.out.print("[1]사료 [2]츄르 [3]캔참치 [4]닭고기 >> ");
 									int food = sc.nextInt();
 									if (food==1) {
-										System.out.println("사료주기");
+										String catFood = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⡀⠀⠀⠀⠀⣀⣀⣀⠤⣀⠤⣀⡀⡀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⢀⣤⢖⣹⢬⢓⠼⢰⢃⣎⣚⡢⢝⢠⢣⢆⡄⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⡼⡎⢲⢑⡒⢕⠫⣇⠃⡎⢧⠸⢘⢰⢢⣣⢝⡄⠀⠀⠀\n"
+												+ "⠀⠀⠀⠰⠀⠈⠋⠶⠻⡭⣭⣖⡯⣯⣓⢮⠽⠤⠗⠋⠁⠰⡀⠀⠀\n"
+												+ "⠀⠀⢐⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣵⠀⠀\n"
+												+ "⠀⠀⠀⠫⡂⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⡊⠂⠀⠀\n"
+												+ "⠀⠀⠀⣆⢪⠁⠒⣙⠢⠒⣒⣐⣐⣐⣒⢒⠢⠭⣋⡢⠈⢎⠵⠀⠀\n"
+												+ "⠀⠀⠀⠀⠁⢀⠠⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠈⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀";
+										System.out.println("사료를 주었습니다.");
+										System.out.println(catFood);
 										ccon.updateExpConn(member, 10);
 										ccon.checkLvlConn(member);
 //										ccon.conditionConn(member);
@@ -59,14 +87,97 @@ public class Main2 {
 										System.out.print("경험치 : "+member.getExp());
 										System.out.print("피로도 : "+member.getTired());
 										System.out.println("스트레스 : "+member.getStress());
+										System.out.println("만족스러운 식사였나봅니다.");
+										System.out.println("고양이가 가르릉 거리는군요.");
 									}else if(food==2) {
-										System.out.println("츄르주기");
+										String turu = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠊⠀⡀⢀⣀⡴⠊⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠉⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠋⠀⠀⠀⣿⣯⢌⢧⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⢠⡇⠀⠘⣇⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠁⣸⠁⠀⢀⡴⠃⢇⢇⣫⡳⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠀⢸⣥⣤⡀⢸⡄⠀⠀⠀⠀⠀⠀⠀⣼⡴⣺⠃⠀⣰⣯⡴⣶⡴⠛⠉⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⡛⢿⣄⠈⠈⠁⢁⣈⣳⣦⣄⠀⠀⣀⡴⢊⠡⠊⣏⢀⣼⡟⢸⠷⠋⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⡴⠒⠛⠛⠛⠛⠒⠶⢻⣄⠈⢿⣦⠙⠆⠀⡴⣿⢛⣿⡶⢟⣷⡸⡅⢊⣵⣶⠆⢈⣏⣸⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⡇⠀⠚⠋⠙⣻⡦⠀⠀⠙⠳⠀⠉⠃⠀⠀⢧⡿⢿⣿⣷⣏⣼⠛⠹⡌⢛⣭⠞⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⢳⡀⠀⠀⠀⣿⠀⠀⣴⣺⣟⣶⡄⠀⠰⣾⡇⠉⠉⠁⠁⠓⠛⣶⣒⣙⠉⣇⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠓⢦⣄⣈⠁⣀⣸⡿⣿⣶⣇⡇⠀⢀⡴⡟⠿⣆⠀⠀⠀⣰⢻⢿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡟⣋⣤⠛⣾⠿⠋⠀⠀⠊⠀⠉⠓⣃⣀⣀⡴⣧⡀⢉⡽⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⣴⠟⢛⣷⣄⠀⠀⠀⠀⢷⡟⣻⣿⠞⡫⠀⠀⠀⠀⣠⡖⠋⠀⠈⢺⣧⣈⡵⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠹⣶⠟⢁⡼⢷⡀⠀⠀⠀⠉⠛⠦⢬⣤⣄⣤⣴⣟⠉⠻⣆⢀⣴⡿⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠙⢶⡟⠁⣤⠟⢦⡀⠀⠀⠀⠀⣰⠷⠖⠊⠁⠙⢷⣤⠞⠻⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠙⢾⡃⢠⣾⠛⣦⣀⠀⡼⠻⠿⠗⠂⠀⠐⠋⠁⠰⣶⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⢧⣰⡟⢉⡿⠷⠶⠒⠀⠀⠀⠀⠀⣤⣴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⣿⣥⣤⣄⢀⣀⣀⠀⠀⡀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢰⠏⠀⡏⠀⠈⢙⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀⢸⡄⠀⢳⡀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠶⠟⠁⠀⠀⠙⠚⠖⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+										System.out.println("츄르를 주었습니다.");
+										System.out.println(turu);
+										ccon.updateExpConn(member, 10);
+										ccon.checkLvlConn(member);
+//										ccon.conditionConn(member);
+										System.out.print("이름 : "+member.getName());
+										System.out.print("레벨 : "+member.getLvl());
+										System.out.print("경험치 : "+member.getExp());
+										System.out.print("피로도 : "+member.getTired());
+										System.out.println("스트레스 : "+member.getStress());
+										System.out.println("만족스러운 식사였나봅니다.");
+										System.out.println("고양이가 가르릉 거리는군요.");
 									}else if(food==3) {
 										System.out.println("캔참치");
+										String can = "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⡛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
+												+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⢞⢭⡹⢂⣬⣼⢴⣅⢻⣿⣿⣿⣿⣿\n"
+												+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡖⣰⣼⣿⣿⣤⣿⡏⢼⣿⣿⣿⣿⣿\n"
+												+ "⣿⣿⣿⣿⣿⣿⣿⣿⢿⠿⢃⣾⣿⣿⣿⣿⣿⡟⢰⣿⣿⣿⣿⣿⣿\n"
+												+ "⣿⣿⣿⣿⠟⣫⡥⠶⠪⣰⣿⣿⣿⡿⠿⢛⠋⡘⠶⢬⣍⠻⢿⣿⣿\n"
+												+ "⣿⣿⣿⡇⣭⠡⢶⠯⡰⠟⣛⣉⣥⣶⠛⠲⡶⢦⣤⡄⠌⣹⠌⣿⣿\n"
+												+ "⣿⣿⣿⡇⢈⠻⢲⢴⣄⣝⣙⡋⣛⢙⢛⢛⣝⣍⡥⡞⠟⠉⠨⣿⣿\n"
+												+ "⣿⣿⣿⡇⠠⠀⠄⠠⠀⡁⠡⠙⠉⠋⠍⠡⠁⠁⠄⢀⠂⢈⠨⣿⣿\n"
+												+ "⣿⣿⣿⡇⠐⠀⠂⠄⣡⣴⣶⣶⣷⣤⣆⡐⣨⣤⣌⠀⠄⠂⠨⣿⣿\n"
+												+ "⣿⣿⣿⡇⢈⠀⡁⢸⣿⣅⣽⣿⣿⣿⣿⣿⣿⣿⡏⠀⢂⠠⢑⣿⣿\n"
+												+ "⣿⣿⣿⡇⡠⠀⡐⠀⠛⠿⣿⣿⣿⠿⠟⠋⠹⠿⠟⠀⠄⠠⡐⣿⣿\n"
+												+ "⣿⣿⣿⣧⡑⢦⣔⣈⢀⢁⢀⠀⡀⠄⠐⢈⢀⢂⢠⣡⡴⢛⣰⣿⣿\n"
+												+ "⣿⣿⣿⣿⣿⣷⣴⣍⣝⣙⣑⡳⡺⡺⣚⣚⣊⣫⣍⣦⣾⣿⣿⣿⣿\n"
+												+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿";
+										System.out.println("캔참치를 주었습니다.");
+										System.out.println(can);
+										ccon.updateExpConn(member, 10);
+										ccon.checkLvlConn(member);
+//										ccon.conditionConn(member);
+										System.out.print("이름 : "+member.getName());
+										System.out.print("레벨 : "+member.getLvl());
+										System.out.print("경험치 : "+member.getExp());
+										System.out.print("피로도 : "+member.getTired());
+										System.out.println("스트레스 : "+member.getStress());
+										System.out.println("만족스러운 식사였나봅니다.");
+										System.out.println("고양이가 가르릉 거리는군요.");
 									}else if(food==4) {
-										System.out.println("닭고기");
+										String chicken = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⢐⠐⠨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠈⠈⠌⠢⢠⢰⢠⢠⢀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠐⢕⢕⢕⢕⢕⠩⠪⡑⡑⢕⠢⡢⢄⠄⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢕⢕⢕⢱⠡⡃⢕⢡⢑⢌⢢⢑⢕⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⢣⢣⢣⢣⢱⢨⠢⡑⡔⢅⢪⢊⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡸⡸⡸⡸⡸⡱⡱⡱⡱⡱⡁⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠃⠏⠮⠪⠎⠞⠘⠁⠁⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+												+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+										System.out.println("닭고기를 주었습니다.");
+										System.out.println(chicken);
+										ccon.updateExpConn(member, 10);
+										ccon.checkLvlConn(member);
+//										ccon.conditionConn(member);
+										System.out.print("이름 : "+member.getName());
+										System.out.print("레벨 : "+member.getLvl());
+										System.out.print("경험치 : "+member.getExp());
+										System.out.print("피로도 : "+member.getTired());
+										System.out.println("스트레스 : "+member.getStress());
+										System.out.println("만족스러운 식사였나봅니다.");
+										System.out.println("고양이가 가르릉 거리는군요.");
 									}else {
-										System.out.println("진지하게 해주세요!");
+										System.out.println("이렇게 장난치고 계셔도 되는 거에요?");
+										System.out.println("고양이가 침을 질질 흘리면서 당신을 보고 있는데요?");
 									}
 								} // 밥주기
 								else if (menu3 == 2) {// 놀아주기
@@ -74,7 +185,8 @@ public class Main2 {
 								else if (menu3 == 3) {// 낮잠자기
 								} // 낮잠자기
 								else {// 잘못 입력
-									System.out.println("잘못 입력하셨습니다.");
+									System.out.println("장난은 고양이한테 해주세요.");
+									System.out.println("지금도 당신을 빤히 바라보고 있잖아요.");
 								} // 잘못 입력
 							} // 게임하기
 							else if (menu2 == 2) {// 랭킹확인
@@ -82,12 +194,13 @@ public class Main2 {
 							} // 랭킹확인
 
 							else if (menu2 == 3) {// 종료
-								System.out.println("안녕히 가십시오.");
+								System.out.println("다음에 또 뵙도록 하겠습니다.");
 								break;
 							} // 종료
 
 							else {// 잘못 입력
-								System.out.println("잘못 입력하셨습니다.");
+								System.out.println("이러지 마세요~");
+								System.out.println("당신의 고양이가 기다리고 있잖아요?");
 							} // 잘못 입력
 						} // 메인 홈페이지
 					} // 동물 정보 일치

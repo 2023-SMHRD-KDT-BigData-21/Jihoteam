@@ -114,6 +114,10 @@ public class CatController {
 	
 //	피로도 업데이트
 	public String updateTiredConn(MemberVO member, int tired) {
+		if (member.getTired() <= tired) { //차감되는 피로도보다 현재 피로도가 낮으면
+			String result = "불가";
+			return result;
+		}
 		int row = udao.updateTired(member, tired);
 		String result;
 		if(row>0) {
