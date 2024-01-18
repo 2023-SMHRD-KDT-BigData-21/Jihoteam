@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import controller.CatController;
 import controller.MemberController;
+import controller.Controller;
 import model.MemberVO;
 
 public class Main {
@@ -42,11 +43,13 @@ public class Main {
 						ccon.typeConn();
 						System.out.println("1)페르시안 2)샴 3)메인 쿤 4)스코티시 폴드 5)러시안 블루");
 						int cat = sc.nextInt();
-						ccon.enrollCatConn(member, cat);
+						System.out.print("고양이 이름을 입력해주세요 >>");
+						String name = sc.next();
+						ccon.enrollCatConn(member, cat, name);
 					}
 					mainPage(member);
 				}
-				else {//일치하는 아이디기 없으면
+				else {//일치하는 아이디가 없으면
 					System.out.println("아이디와 비밀번호를 확인하세요");
 				}
 			}//로그인
@@ -104,7 +107,7 @@ public class Main {
 		// DB에서 id, pw 대조
 	}
 
-	public static void mainPage(MemberVO member) {
+	public static boolean mainPage(MemberVO member) {
 		while(true) {// 메인 홈페이지
 			System.out.println("무엇을 하시겠습니까?");
 			System.out.print("[1]게임하기 [2]랭킹확인 [3] 다마고치 종료 [4]탈퇴하기 >> ");
@@ -120,12 +123,12 @@ public class Main {
 				
 			else if (menu2 == 3) {// 종료
 				System.out.println("안녕히 가십시오.");
-				break;
+				return true;
 			} // 종료
 				
 			else if (menu2 == 4) {// 탈퇴
 				doDelete(member);
-
+				return true;
 			} // 탈퇴
 			else {// 잘못 입력
 				System.out.println("잘못 입력하셨습니다.");
@@ -136,7 +139,7 @@ public class Main {
 	
 	public static void game() {
 		System.out.println("무엇을 하시겠습니까?");
-		System.out.print("[1]밥주기 [2]놀아주기 [3]낮잠자기");
+		System.out.print("[1]밥주기 [2]놀아주기 [3]낮잠자기 >>");
 		int menu3 = sc.nextInt();
 		
 		if (menu3 == 1) {// 밥주기
