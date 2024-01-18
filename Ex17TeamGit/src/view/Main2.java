@@ -46,6 +46,28 @@ public class Main2 {
 								System.out.print("[1]밥주기 [2]놀아주기 [3]낮잠자기");
 								int menu3 = sc.nextInt();
 								if (menu3 == 1) {// 밥주기
+									System.out.println("어떤걸 주시겠습니까?");
+									System.out.print("[1]사료 [2]츄르 [3]캔참치 [4]닭고기 >> ");
+									int food = sc.nextInt();
+									if (food==1) {
+										System.out.println("사료주기");
+										ccon.updateExpConn(member, 10);
+										ccon.checkLvlConn(member);
+//										ccon.conditionConn(member);
+										System.out.print("이름 : "+member.getName());
+										System.out.print("레벨 : "+member.getLvl());
+										System.out.print("경험치 : "+member.getExp());
+										System.out.print("피로도 : "+member.getTired());
+										System.out.println("스트레스 : "+member.getStress());
+									}else if(food==2) {
+										System.out.println("츄르주기");
+									}else if(food==3) {
+										System.out.println("캔참치");
+									}else if(food==4) {
+										System.out.println("닭고기");
+									}else {
+										System.out.println("진지하게 해주세요!");
+									}
 								} // 밥주기
 								else if (menu3 == 2) {// 놀아주기
 								} // 놀아주기
