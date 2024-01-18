@@ -11,7 +11,7 @@ public class UpdateDAO {
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
 
-	//DB연결 메소드
+	// DB연결 메소드
 	public void getConn() {
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@project-db-campus.smhrd.com:1523:xe";
@@ -25,8 +25,8 @@ public class UpdateDAO {
 			e.printStackTrace();
 		} // try-catch
 	}// getConn()
-	
-	//DB연결 종료 메소드
+
+	// DB연결 종료 메소드
 	public void getClose() {
 		try {
 			if (rs != null)
@@ -40,7 +40,6 @@ public class UpdateDAO {
 		} // try-catch
 	}// getClose()
 
-	
 //	Exp 수치 업데이트 메소드	
 	public int updateExp(MemberVO member, int exp) {
 		getConn();
@@ -58,40 +57,12 @@ public class UpdateDAO {
 			getClose();
 		} // try-catch
 		return row;
-	}//updateExp
-	
-//	Lvl 수치 업데이트 메소드
-	public int updateLvl(MemberVO member) {
+	}// updateExp
+
+//	레벨업 할지말지 확인하는 메소드
+	public int checkLvl(MemberVO member, int exp, int lvl) {
 		getConn();
-		int lvl = member.getLvl();
-		int exp = member.getExp();
-		if(lvl==1) {
-			if(exp>=50) {
-				exp = 0;
-				lvl++;
-			}
-		}else if(lvl==2) {
-			if(exp>=70) {
-				exp = 0;
-				lvl++;
-			}
-		}else if(lvl==3) {
-			if(exp>=100) {
-				exp = 0;
-				lvl++;
-			}
-		}else if(lvl==4) {
-			if(exp>=100) {
-				exp = 0;
-				lvl++;
-			}
-		}else if(lvl==5) {
-			if(exp>=100) {
-				exp = 0;
-				lvl++;
-			}
-		}
-		int row = 0;	
+		int row = 0;
 		try {
 			String sql = "update member_db set c_exp=?, c_lvl=? where id=?";
 			psmt = conn.prepareStatement(sql);
@@ -106,8 +77,8 @@ public class UpdateDAO {
 			getClose();
 		} // try-catch
 		return row;
-	}//updateLvl
-	
+	}// updateLvl
+
 //	스트레스 수치 업데이트 메소드
 	public int updateStress(MemberVO member, int stress) {
 		getConn();
@@ -126,7 +97,7 @@ public class UpdateDAO {
 		} // try-catch
 		return row;
 	} // updateStress
-	
+
 //	Tired 수치 업데이트 메소드
 	public int updateTired(MemberVO member, int tired) {
 		getConn();
@@ -144,8 +115,8 @@ public class UpdateDAO {
 			getClose();
 		} // try-catch
 		return row;
-	}//updateTired
-	
+	}// updateTired
+
 //	Date 수치 업데이트 메소드
 	public int updateDate(MemberVO member, int date) {
 		getConn();
@@ -163,5 +134,5 @@ public class UpdateDAO {
 			getClose();
 		} // try-catch
 		return row;
-	}//updateDate
+	}// updateDate
 }
