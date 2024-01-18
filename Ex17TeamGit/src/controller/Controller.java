@@ -122,7 +122,7 @@ public class Controller {
 	
 	//랜덤이벤트 메소드
 	public void randomEvent() {
-		MemberVO info = dao.selectMem();
+		MemberVO info = dao.selectMem(member);
 		Random ran = new Random();
 		int stress = info.getStress();
 		String name = info.getName();
