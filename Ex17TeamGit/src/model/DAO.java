@@ -267,7 +267,7 @@ public class DAO {
 		try {
 			String sql = "update member_db set c_date=? where id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setLong(1, member.getLvl());
+			psmt.setLong(1, member.getDate());
 			psmt.setString(2, member.getId());
 			row = psmt.executeUpdate();
 
