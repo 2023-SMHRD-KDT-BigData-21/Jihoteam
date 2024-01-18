@@ -151,12 +151,12 @@ public class DAO {
 	} // enrollCat
 	
 	//특정 회원 정보 조회 메소드
-	public MemberVO selectMem() {
+	public MemberVO selectMem(MemberVO member) {
 		getConn();
-		MemberVO member = null;
 		try {
 			String sql = "select * from member_db where id = ?";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, member.getId());
 			rs = psmt.executeQuery();
 						
 			if(rs.next()) {
@@ -278,5 +278,29 @@ public class DAO {
 		} // try-catch
 		return row;
 	}//updateDate
+	
+//	고양이 종류 가져오는 메소드
+	public ArrayList<CatVO> typeList() {
+		getConn();
+		ArrayList<CatVO> typeList = new ArrayList<CatVO>();
+		try {
+			String sql = "select * from cat_db";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+						
+			while(rs.next()) {
+				String type = rs.getString(1);
+				String info = rs.getString(2);
+				typeList.add(new CatVO(type,info));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+			
+		} // try - catch
+		
+		return typeList;
+	} // selectList
 	
 }// DAO
