@@ -2,46 +2,48 @@ package view;
 
 import java.util.Scanner;
 
-import controller.Controller;
+import controller.CatController;
+import controller.MemberController;
 import model.MemberVO;
 
 public class Main {
+	static Scanner sc = new Scanner(System.in);//
+	static MemberController  con = new MemberController();//
+	static CatController ccon = new CatController();
 
+//	public static int inputMenu1() {
+//		while(true) {			
+////			System.out.print("[1]회원가입 [2]로그인 [3]종료 >> ");
+////			try {
+//				int menu1 = sc.nextInt();
+////				break;
+////			} catch (Exception e) {
+////				System.out.println("숫자를 입력해주세요.");
+////				inputMenu1();
+////			}
+//		}
+//	}
+	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		Controller con = new Controller();
 		while (true) {// 초기화면
+			// 입력
 			System.out.print("[1]회원가입 [2]로그인 [3]종료 >> ");
 			int menu1 = sc.nextInt();
-
 			if (menu1 == 1) {// 회원가입
-				System.out.println("==회원가입==");
-				System.out.print("ID : ");
-				String id = sc.next();
-				System.out.print("PW : ");
-				String pw = sc.next();
-				System.out.print("NAME : ");
-				String name = sc.next();
-				
-				// DB에 id, pw, name 등록하기
-				MemberVO member = new MemberVO(id,pw,name);
-				String result = con.joinConn(member);
-				
-				System.out.println("회원가입에 " + result + "하셨습니다.");// 성공실패 유무 표기하기
+				doJoin();
 			} // 회원가입
-
 			else if (menu1 == 2) {// 로그인
-				System.out.println("==로그인==");
-				System.out.print("ID : ");
-				String id = sc.next();
-				System.out.print("PW : ");
-				String pw = sc.next();
-
-				MemberVO member = new MemberVO(id,pw);
-				String id2 = con.loginConn(member);
-				if (id2 != null) {
+				String id = doLogin();
+				if (id != null) {
 					System.out.println("로그인 성공");
-				}else if (id2 == null) {
+					if (id != null && member.name == null) {//id는 존재하지만 동물정보는 없으면
+						System.out.println("앞으로 함께할 고양이를 선택해주세요");
+						ccon.typeConn();
+						System.out.println("1)페르시안 2)샴 3)메인 쿤 4)스코티시 폴드 5)러시안 블루");
+						int cat = sc.nextInt();
+						ccon.enrollCatConn(member, cat);
+					}					
+				}else if (id == null) {
 					System.out.println("아이디와 비밀번호를 확인하세요");
 				}
 				if (id2 != null && member.name == null) {//id는 존재하지만 동물정보는 없으면
@@ -91,6 +93,49 @@ public class Main {
 						} // 잘못 입력
 					} // 메인 홈페이지
 				} // 동물 정보 일치
+//				else if (id != null && member.name != null){
+//					while (true) {// 메인 홈페이지
+//						System.out.println("무엇을 하시겠습니까?");
+//						System.out.print("[1]게임하기 [2]랭킹확인 [3]종료 >> ");
+//						int menu2 = sc.nextInt();
+//
+//						if (menu2 == 1) {// 게임하기
+//							System.out.println("무엇을 하시겠습니까?");
+//							System.out.print("[1]밥주기 [2]놀아주기 [3]낮잠자기");
+//							int menu3 = sc.nextInt();
+//
+//							if (menu3 == 1) {// 밥주기
+//
+//							} // 밥주기
+//
+//							else if (menu3 == 2) {// 놀아주기
+//
+//							} // 놀아주기
+//
+//							else if (menu3 == 3) {// 낮잠자기
+//
+//							} // 낮잠자기
+//
+//							else {// 잘못 입력
+//								System.out.println("잘못 입력하셨습니다.");
+//							} // 잘못 입력
+//						} // 게임하기
+//
+//						else if (menu2 == 2) {// 랭킹확인
+//							System.out.println("당신의 랭킹은 : ");
+//						} // 랭킹확인
+//
+//						else if (menu2 == 3) {// 종료
+//							System.out.println("안녕히 가십시오.");
+//							break;
+//						} // 종료
+//
+//						else {// 잘못 입력
+//							System.out.println("잘못 입력하셨습니다.");
+//						} // 잘못 입력
+//					} // 메인 홈페이지
+//				} // 동물 정보 일치
+//github.com/2023-SMHRD-KDT-BigData-21/Jihoteam.git
 
 			} // 로그인
 
@@ -114,5 +159,33 @@ public class Main {
 			} // 잘못 입력
 		} // 초기화면
 	}// main(String[] args)
-}
-// Main
+	
+	//회원가입
+	public static void doJoin() {
+		System.out.println("==회원가입==");
+		System.out.print("ID : ");
+		String id = sc.next();
+		System.out.print("PW : ");
+		String pw = sc.next();
+		
+		// DB에 id, pw, name 등록하기
+		MemberVO member = new MemberVO(id,pw);
+		String result = con.joinConn(member);
+		
+		System.out.println("회원가입에 " + result + "하셨습니다.");// 성공실패 유무 표기하기
+	} //doJoin
+	
+	//로그인
+	public static String doLogin() {
+		System.out.println("==로그인==");
+		System.out.print("ID : ");
+		String id = sc.next();
+		System.out.print("PW : ");
+		String pw = sc.next();
+
+		MemberVO member = new MemberVO(id,pw);
+		String result = con.loginConn(member);
+		
+		return result;
+	} //doLogin
+}// Main

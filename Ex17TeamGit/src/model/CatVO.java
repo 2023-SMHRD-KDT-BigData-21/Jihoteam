@@ -3,9 +3,12 @@ package model;
 public class CatVO {
 	public String type;
 	public String info;
+	public String info2;
 
-	public CatVO(String type2, String info2) {
-		// TODO Auto-generated constructor stub
+	public CatVO(String type, String info, String info2) {
+		this.type = type;
+		this.info = info;
+		this.info2 = info2;
 	}
 
 	public String getType() {
