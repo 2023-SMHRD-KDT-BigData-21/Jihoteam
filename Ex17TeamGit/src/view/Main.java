@@ -46,7 +46,7 @@ public class Main {
 				}
 				if (id2 != null && member.name == null) {//id는 존재하지만 동물정보는 없으면
 					System.out.println("앞으로 함께할 고양이를 선택해주세요");
-					System.out.println("1)코숏 2)페르시안 3)먼치킨 4)노르웨이숲 5)삼색이");
+					System.out.println("1)페르시안 2)샴 3)메인 쿤 4)스코티시 폴드 5)러시안 블루");
 					
 				}
 				else if (id2 != null && member.name != null){
