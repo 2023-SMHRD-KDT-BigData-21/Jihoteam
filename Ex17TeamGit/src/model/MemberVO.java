@@ -112,4 +112,13 @@ public class MemberVO {
 		return pw;
 	}
 
+	public MemberVO(String name, int lvl,int exp, int tired, int stress) {
+		this.name = name;
+		this.lvl = lvl;
+		this.tired = tired;
+		this.stress = stress;
+		this.exp = exp;
+	}
+
+	
 }

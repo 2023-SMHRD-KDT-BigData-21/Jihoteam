@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import model.CatDAO;
 import model.CatVO;
 import model.DAO;
+import model.MemberDAO;
 import model.MemberVO;
 import model.UpdateDAO;
 
 public class CatController {
 	UpdateDAO udao = new UpdateDAO();
 	CatDAO cdao = new CatDAO();
+	MemberDAO mdao = new MemberDAO();
 	
 	//고양이 정보 등록
 	public String enrollCatConn(MemberVO member, int cat, String name) {
@@ -88,15 +90,15 @@ public class CatController {
 			int row = udao.checkLvl(member, exp, lvl);
 			String result;
 			if(row>0) {
-				System.out.println("exp 수치 변경");
+				System.out.println("lvl 수치 변경");
 			}else {
-				System.out.println("exp 수치 변경 실패");
+				System.out.println("lvl 수치 변경 실패");
 			}// if - else
 		}//if
 	}
 	
 //	경험치 업데이트
-	public String updateLvlConn(MemberVO member, int exp) {
+	public String updateExpConn(MemberVO member, int exp) {
 		int row = udao.updateExp(member, exp);
 		String result;
 		if(row>0) {
@@ -145,5 +147,10 @@ public class CatController {
 	      ArrayList<CatVO> typeList = cdao.typeList();
 	      return typeList;
 	   }
+	
+	public ArrayList<MemberVO> conditionConn(MemberVO member){
+		ArrayList<MemberVO> condition = mdao.condition(member);
+		return condition;
+	}
 
 } //CatController

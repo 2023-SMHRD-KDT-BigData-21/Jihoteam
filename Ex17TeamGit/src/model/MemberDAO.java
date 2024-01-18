@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class MemberDAO {
 	
@@ -44,7 +45,7 @@ public class MemberDAO {
 		getConn();
 		int row = 0;
 		try {
-			String sql =  "insert into member_db values(?, ?, 0, null, null, 0, 0, 0, 0, 0)";
+			String sql =  "insert into member_db values(?, ?, 0, null, null, 1, 7, 1, 0, 0)";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -166,4 +167,29 @@ public class MemberDAO {
 		
 		return null;
 	} // selectList
+	
+//	고양이 상태정보 가져오는 메소드
+	public ArrayList<MemberVO> condition(MemberVO member){
+		getConn();
+		ArrayList<MemberVO> condition = new ArrayList<MemberVO>();
+		try {
+			String sql = "select c_name,c_level,c_exp,c_tired,c_stress from member_db where m_id=?";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			psmt.setString(1, member.getId());
+			
+			while(rs.next()) {
+				String name = rs.getString(1);
+				int lvl = rs.getInt(2);
+				int exp = rs.getInt(3);
+				int tired = rs.getInt(4);
+				int stress = rs.getInt(5);
+				condition.add(new MemberVO(name,lvl,exp,tired,stress));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}return condition;
+	}
 }

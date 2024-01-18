@@ -44,10 +44,11 @@ public class UpdateDAO {
 	public int updateExp(MemberVO member, int exp) {
 		getConn();
 		int row = 0;
+		int update=member.getExp()+exp;
 		try {
-			String sql = "update member_db set c_exp=? where id=?";
+			String sql = "update member_db set c_exp=? where m_id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setLong(1, member.getExp() + exp);
+			psmt.setLong(1, update);
 			psmt.setString(2, member.getId());
 			row = psmt.executeUpdate();
 
@@ -64,7 +65,7 @@ public class UpdateDAO {
 		getConn();
 		int row = 0;
 		try {
-			String sql = "update member_db set c_exp=?, c_lvl=? where id=?";
+			String sql = "update member_db set c_exp=?, c_lvl=? where m_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setLong(1, exp);
 			psmt.setLong(2, lvl);
@@ -84,7 +85,7 @@ public class UpdateDAO {
 		getConn();
 		int row = 0;
 		try {
-			String sql = "update member_db set c_stress=? where id=?";
+			String sql = "update member_db set c_stress=? where m_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setLong(1, member.getStress() + stress);
 			psmt.setString(2, member.getId());
@@ -103,7 +104,7 @@ public class UpdateDAO {
 		getConn();
 		int row = 0;
 		try {
-			String sql = "update member_db set c_tired=? where id=?";
+			String sql = "update member_db set c_tired=? where m_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setLong(1, member.getTired() + tired);
 			psmt.setString(2, member.getId());
@@ -122,7 +123,7 @@ public class UpdateDAO {
 		getConn();
 		int row = 0;
 		try {
-			String sql = "update member_db set c_date=? where id=?";
+			String sql = "update member_db set c_date=? where m_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setLong(1, member.getDate() + date);
 			psmt.setString(2, member.getId());
@@ -136,3 +137,4 @@ public class UpdateDAO {
 		return row;
 	}// updateDate
 }
+
