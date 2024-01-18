@@ -60,6 +60,7 @@ public class MemberDAO {
 		}
 		return row;
 	}
+
 	//중복 검사 메소드
 	public boolean checkID(String id) {
 		getConn();
@@ -116,7 +117,7 @@ public class MemberDAO {
 		getConn();
 		int row=0;
 		try {
-			String sql = "delete from member_db where id=? and pw=?";
+			String sql = "delete from member_db where m_id=? and m_pw=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, member.getId());
 			psmt.setString(2, member.getPw());
@@ -132,12 +133,12 @@ public class MemberDAO {
 	}//회원탈퇴 메소드
 	
 	//특정 회원 정보 조회 메소드
-	public MemberVO selectMem(MemberVO member) {
+	public MemberVO selectMem(String inputId) {
 		getConn();
 		try {
-			String sql = "select * from member_db where id = ?";
+			String sql = "select * from member_db where m_id = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, member.getId());
+			psmt.setString(1, inputId);
 			rs = psmt.executeQuery();
 						
 			if(rs.next()) {
@@ -151,7 +152,8 @@ public class MemberDAO {
 				int stress = rs.getInt(8);
 				int exp = rs.getInt(9);
 				int date = rs.getInt(10);
-				member = new MemberVO(id,pw,rank,type,name,level,tired,stress,exp,date);
+				MemberVO member = new MemberVO(id,pw,rank,type,name,level,tired,stress,exp,date);
+				return member;
 			}
 			
 		} catch (Exception e) {
@@ -162,6 +164,6 @@ public class MemberDAO {
 			
 		} // try - catch
 		
-		return member;
+		return null;
 	} // selectList
 }

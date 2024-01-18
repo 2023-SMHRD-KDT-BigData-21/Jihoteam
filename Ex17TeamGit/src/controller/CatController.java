@@ -13,20 +13,20 @@ public class CatController {
 	CatDAO cdao = new CatDAO();
 	
 	//고양이 정보 등록
-	public String enrollCatConn(MemberVO member, int cat) {
+	public String enrollCatConn(MemberVO member, int cat, String name) {
 		String type = null;
 		if(cat == 1) {
 			type = "페르시안";
 		}else if(cat == 2) {
 			type = "샴";
 		}else if(cat == 3) {
-			type = "메인 쿤";
+			type = "메인쿤";
 		}else if(cat == 4) {
-			type = "스코티시 폴드";
+			type = "스코티시폴드";
 		}else if(cat == 5) {
-			type = "러시안 블루";
+			type = "러시안블루";
 		}
-		int row = cdao.enrollCat(member, type);
+		int row = cdao.enrollCat(member, type, name);
 		String result;
 		if(row>0) {
 			System.out.println("고양이 입력 성공");
