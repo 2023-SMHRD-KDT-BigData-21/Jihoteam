@@ -15,7 +15,7 @@ public class Controller {
 	UpdateDAO udao = new UpdateDAO();
 	//랜덤이벤트 메소드
 	public void randomEvent(MemberVO member) {
-		MemberVO info = mdao.selectMem(member);
+		MemberVO info = mdao.selectMem(member.getId());
 		Random ran = new Random();
 		int stress = info.getStress();
 		String name = info.getName();
