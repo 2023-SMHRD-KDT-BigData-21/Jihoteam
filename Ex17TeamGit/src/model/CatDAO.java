@@ -67,14 +67,14 @@ public class CatDAO {
 	} // selectList
 	
 	//고양이 정보 등록 메소드
-	public int enrollCat(MemberVO member, String type) {
+	public int enrollCat(MemberVO member, String type, String name) {
 		getConn();
 		int row = 0;
 		try {
-			String sql = "update member_db set type=?, name=? where id=?";
+			String sql = "update member_db set c_type=?, c_name=? where m_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, type);
-			psmt.setString(2, member.getName());
+			psmt.setString(2, name);
 			psmt.setString(3, member.getId());
 			row = psmt.executeUpdate();
 
