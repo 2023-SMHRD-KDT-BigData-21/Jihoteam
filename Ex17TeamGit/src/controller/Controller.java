@@ -5,13 +5,17 @@ import java.util.Random;
 
 import model.CatVO;
 import model.DAO;
+import model.MemberDAO;
 import model.MemberVO;
+import model.UpdateDAO;
 
 public class Controller {
 	DAO dao = new DAO();
+	MemberDAO mdao = new MemberDAO();
+	UpdateDAO udao = new UpdateDAO();
 	//랜덤이벤트 메소드
 	public void randomEvent(MemberVO member) {
-		MemberVO info = dao.selectMem(member);
+		MemberVO info = mdao.selectMem(member);
 		Random ran = new Random();
 		int stress = info.getStress();
 		String name = info.getName();
@@ -24,12 +28,12 @@ public class Controller {
 				System.out.println("싫다고 발버둥 치는 " + name + "(이)를 붙잡고 억지로 씻기니 깨끗해보입니다.");
 				System.out.println("다만 상당히 기분이 나빠 보이는군요...");
 				stress += 15;
-				dao.updateStress(member, 15);
+				udao.updateStress(member, 15);
 				System.out.println("목욕하기로 스트레스가 15 증가되어 현재 스트레스 지수는 " + stress + "입니다.");
 			} else if (num2 == 2) { //물건깨기(스트레스 감소)
 				System.out.println("집사가 방을 비운동안 집사의 물건을 깨뜨린 " + name + "!!!");
 				stress -= 10;
-				dao.updateStress(member, -10);
+				udao.updateStress(member, -10);
 				if (stress < 0) {
 					stress = 0;
 				}
@@ -37,7 +41,7 @@ public class Controller {
 			} else if (num2 == 3) { //데이트(스트레스 감소)
 				System.out.println("집사가 방을 비운동안 애묘 고양이와 데이트를 하고 온 " + name );
 				stress -= 20;
-				dao.updateStress(member, -20);
+				udao.updateStress(member, -20);
 				if (stress < 0) {
 					stress = 0;
 				}
@@ -45,18 +49,18 @@ public class Controller {
 			} else if (num2 == 4) {
 				System.out.println("집사가 방을 비운동안 옆집 고양이와 싸운 " + name );
 				stress += 20;
-				dao.updateStress(member, 20);
+				udao.updateStress(member, 20);
 				System.out.println("옆집 고양이와의 싸움으로 스트레스가 20 증가하여 현재 스트레스 지수는 " + stress + "입니다.");
 			} else if (num2 == 5) {
 				System.out.println("추워서 집사의 이불 속에 들어간 " + name );
 				stress -= 10;
-				dao.updateStress(member, -10);
+				udao.updateStress(member, -10);
 				System.out.println("포근하고 따뜻해!! 스트레스가 10 감소하여 현재 스트레스 지수는 " + stress + "입니다.");
 			} else if (num2 == 6) {
 				System.out.println("창문 밖에 눈이 오네요~~");
 				System.out.println("눈이 오는 풍경을 구경하며 기분이 좋아진 " + name);				
 				stress -= 5;
-				dao.updateStress(member, -5);
+				udao.updateStress(member, -5);
 				if (stress < 0) {
 					stress = 0;
 				}
