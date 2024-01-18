@@ -185,13 +185,13 @@ public class DAO {
 	} // selectList
 	
 //	스트레스 수치 업데이트 메소드
-	public int updateStress(MemberVO member) {
+	public int updateStress(MemberVO member, int stress) {
 		getConn();
 		int row = 0;
 		try {
 			String sql = "update member_db set c_stress=? where id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setLong(1, member.getStress());
+			psmt.setLong(1, member.getStress() + stress);
 			psmt.setString(2, member.getId());
 			row = psmt.executeUpdate();
 
@@ -204,13 +204,13 @@ public class DAO {
 	} // updateStress
 	
 //	Exp 수치 업데이트 메소드	
-	public int updateExp(MemberVO member) {
+	public int updateExp(MemberVO member, int exp) {
 		getConn();
 		int row = 0;
 		try {
 			String sql = "update member_db set c_exp=? where id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setLong(1, member.getExp());
+			psmt.setLong(1, member.getExp() + exp);
 			psmt.setString(2, member.getId());
 			row = psmt.executeUpdate();
 
@@ -223,13 +223,13 @@ public class DAO {
 	}//updateExp
 	
 //	Lvl 수치 업데이트 메소드
-	public int updateLvl(MemberVO member) {
+	public int updateLvl(MemberVO member, int lvl) {
 		getConn();
 		int row = 0;
 		try {
 			String sql = "update member_db set c_lvl=? where id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setLong(1, member.getLvl());
+			psmt.setLong(1, member.getLvl() + lvl);
 			psmt.setString(2, member.getId());
 			row = psmt.executeUpdate();
 
@@ -242,13 +242,13 @@ public class DAO {
 	}//updateLvl
 	
 //	Tired 수치 업데이트 메소드
-	public int updateTired(MemberVO member) {
+	public int updateTired(MemberVO member, int tired) {
 		getConn();
 		int row = 0;
 		try {
 			String sql = "update member_db set c_tired=? where id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setLong(1, member.getTired());
+			psmt.setLong(1, member.getTired() + tired);
 			psmt.setString(2, member.getId());
 			row = psmt.executeUpdate();
 
@@ -261,13 +261,13 @@ public class DAO {
 	}//updateTired
 	
 //	Date 수치 업데이트 메소드
-	public int updateDate(MemberVO member) {
+	public int updateDate(MemberVO member, int date) {
 		getConn();
 		int row = 0;
 		try {
 			String sql = "update member_db set c_date=? where id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setLong(1, member.getDate());
+			psmt.setLong(1, member.getDate() + date);
 			psmt.setString(2, member.getId());
 			row = psmt.executeUpdate();
 
