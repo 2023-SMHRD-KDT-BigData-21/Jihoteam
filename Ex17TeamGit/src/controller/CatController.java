@@ -12,6 +12,33 @@ public class CatController {
 	UpdateDAO udao = new UpdateDAO();
 	CatDAO cdao = new CatDAO();
 	
+	//고양이 정보 등록
+	public String enrollCatConn(MemberVO member, int cat) {
+		String type = null;
+		if(cat == 1) {
+			type = "페르시안";
+		}else if(cat == 2) {
+			type = "샴";
+		}else if(cat == 3) {
+			type = "메인 쿤";
+		}else if(cat == 4) {
+			type = "스코티시 폴드";
+		}else if(cat == 5) {
+			type = "러시안 블루";
+		}
+		int row = cdao.enrollCat(member, type);
+		String result;
+		if(row>0) {
+			System.out.println("고양이 입력 성공");
+			result = "성공";
+			return result;
+		}else {
+			System.out.println("고양이 입력 실패");
+			result = "실패";
+			return result;
+		}
+	}
+	
 //	스트레스 업데이트
 	public String updateStressConn(MemberVO member, int stress) {
 		int row = udao.updateStress(member, stress);
@@ -118,6 +145,5 @@ public class CatController {
 	      ArrayList<CatVO> typeList = cdao.typeList();
 	      return typeList;
 	   }
-	
 
-}
+} //CatController
