@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import controller.CatController;
 import controller.MemberController;
+import controller.RankingController;
 import controller.Controller;
 import model.CatVO;
 import model.MemberVO;
@@ -118,7 +119,7 @@ public class Main_final {
 			} // 게임하기
 
 			else if (menu2 == 2) {// 랭킹확인
-				System.out.println("당신의 랭킹은 : ");
+				ranking(member);
 			} // 랭킹확인
 
 			else if (menu2 == 3) {// 종료
@@ -255,6 +256,11 @@ public class Main_final {
 
 	}// game
 
+	public static void ranking(MemberVO member) {
+		RankingController rCon = new RankingController();
+		rCon.showRanker(member);
+	}
+	
 	public static void status(MemberVO member) {
 		System.out.println(member.getName() + "의 현재 레벨은 " + member.getLvl() + ", 경험치는 " + member.getExp() + ", 피로도는 "
 				+ member.getTired() + ", 스트레스 지수는 " + member.getStress() + "입니다.");
