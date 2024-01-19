@@ -5,16 +5,22 @@ import java.util.Scanner;
 
 import controller.CatController;
 import controller.MemberController;
+import controller.MusicController;
 import controller.RankingController;
+import javazoom.jl.player.MP3Player;
 import controller.Controller;
 import model.CatVO;
 import model.MemberVO;
+import model.MusicVO;
 
 public class Main_final {
 	static Scanner sc = new Scanner(System.in);//
 	static MemberController mCon = new MemberController();//
 	static CatController ccon = new CatController();
 	static Controller ocon = new Controller();
+	static MusicController mucon = new MusicController();
+	static MP3Player mp3 = new MP3Player();
+	static ArrayList<MusicVO> musicList = mucon.musicList();
 
 	public static void main(String[] args) {
 		ArrayList<CatVO> typeList = new ArrayList<CatVO>();
@@ -178,6 +184,10 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠁⢀⠠⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠈⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(4).getPath());
 					System.out.println("사료를 주었습니다.");
 					System.out.println(catFood);
 					System.out.println("만족스러운 식사였나봅니다.");
@@ -209,6 +219,10 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢰⠏⠀⡏⠀⠈⢙⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀⢸⡄⠀⢳⡀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠶⠟⠁⠀⠀⠙⠚⠖⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(4).getPath());
 					System.out.println("츄르를 주었습니다.");
 					System.out.println(turu);
 					System.out.println("만족스러운 식사였나봅니다.");
@@ -236,6 +250,10 @@ public class Main_final {
 							+ "⣿⣿⣿⣧⡑⢦⣔⣈⢀⢁⢀⠀⡀⠄⠐⢈⢀⢂⢠⣡⡴⢛⣰⣿⣿\n"
 							+ "⣿⣿⣿⣿⣿⣷⣴⣍⣝⣙⣑⡳⡺⡺⣚⣚⣊⣫⣍⣦⣾⣿⣿⣿⣿\n"
 							+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(4).getPath());
 					System.out.println("캔참치를 주었습니다.");
 					System.out.println(can);
 					System.out.println("만족스러운 식사였나봅니다.");
@@ -261,6 +279,10 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(4).getPath());
 					System.out.println("닭고기를 주었습니다.");
 					System.out.println(chicken);
 					System.out.println("만족스러운 식사였나봅니다.");
@@ -303,6 +325,10 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠿⠶⠿⠶⠞⠛⠉⠉⠉⠹⣄⣴⣀⣸⠦⠶⠃⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(0).getPath());
 					System.out.println("고양이가 레이저에 흥미를 보이나 봅니다.");
 					System.out.println(laser);
 					System.out.println("세상에, 정말 즐거웠나보군요.");
@@ -335,6 +361,10 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡞⠋⣁⣼⠀⠀⠀⡇⢸⡇⠀⠀⠀⢿⣶⣆⣉⣍⠁⠀⠈⢿⣦⣠⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣤⣤⣼⣆⣴⣿⣿⠀⢠⣶⣷⣾⣧⣤⣤⣤⣾⣿⣾⣿⣿⠉⣽⡿⠛⣿⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠁⠉⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠉⠀";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(1).getPath());
 					System.out.println("고양이를 캣 타워에 올려둡니다.");
 					System.out.println(tower);
 					System.out.println("세상에, 정말 즐거웠나보군요.");
@@ -374,6 +404,10 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠷⣦⣄⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣧⠀⠀⠙⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢦⡀⠐⣿⣟⡆⠀⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(2).getPath());
 					System.out.println("낚싯대를 고양이 앞에 흔들어 댑니다.");
 					System.out.println(fishing);
 					System.out.println("세상에, 정말 즐거웠나보군요.");
@@ -411,6 +445,10 @@ public class Main_final {
 							+ "⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢠⠀⠤⣙⢖⡫⠵⡧⠙⡴⣅⠠⣀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠁⠀⡀\n"
 							+ "⠀⠈⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠉⠘⠙⠚⠛⠁⠒⠉⠑⠀⠁⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠁⠀⡀⠀\n"
 							+ "⠈⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠂⠀⠀⠀⠀⠀⠀⠀⡀⠠⠀⠂⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⢀";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(3).getPath());
 					System.out.println("간식거리를 흔들어 주의를 끈 다음, 재빨리 다른 곳에 숨습니다.");
 					System.out.println(hideAndSeek);
 					System.out.println("세상에, 정말 즐거웠나보군요.");
@@ -453,6 +491,10 @@ public class Main_final {
 							+ "⠀⠀⠁⠂⠁⢺⡪⣇⢧⢳⢱⢕⢕⢧⢫⡪⡎⣎⢎⠣⡱⡕⣗⢵⣻⣺⣪⡳⣝⢮⡫⣆⠌⡐⠨⢐⢐⢄⣦⡳⣕⢵⢳⣻⢼⡪⡗⠝⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠈⠞⣗⢯⢳⢱⢕⢝⢜⢜⢜⡜⡜⡜⢜⢼⣚⢮⠳⠕⠓⠓⠙⠊⠓⠙⠓⠗⠔⢕⠮⢮⡫⡾⡕⡗⡽⠕⠏⠋⠁⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠉⠃⠋⠊⠑⠁⠀⠀⠀⠘⠕⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(5).getPath());
 					System.out.println("고양이한테 이불을 덮어줍니다.");
 					System.out.println(blanket);
 					System.out.println("좋은 꿈이라도 꾼 걸까요?");
@@ -487,6 +529,10 @@ public class Main_final {
 							+ "⠀⠀⠀⠛⠶⠤⠤⣤⣤⣤⠤⠷⠾⠛⠛⠋⠛⠷⠾⠤⠤⠤⠤⢴⣇⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⣀⣠⠴⠛⠁⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⡷⠶⠖⠚⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⠿⣿⣿⣿⣿⡾⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(5).getPath());
 					System.out.println("고양이한테 물고기 인형을 안겨줍니다.");
 					System.out.println(toy);
 					System.out.println("좋은 꿈이라도 꾼 걸까요?");
@@ -520,6 +566,10 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⣾⢁⡄⠾⢻⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡿⠻⡟⣿⣿⣿⣿⣶⣾⣿⣿⣧⡀⠀\n"
 							+ "⣤⣤⣤⣴⣿⣿⡁⠀⢸⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⢠⣨⢠⠀⠀⠄⠀⠀⠀⠀⠀⠀⣿⠇⠀⢀⣿⣿⣿⣿⣿⣿⣿⣟⡙⣷⡤\n"
 							+ "⠛⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠶⣶⣤⣤⣤⣤⣤⣤⣤⣤⣼⣤⣾⣶⣾⣤⣤⣤⣠⣤⣤⣤⣤⣾⡿⠷⠿⠿⠿⠿⠿⠿⠿⠛⠛⠛⠛⠛⠃";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(5).getPath());
 					System.out.println("잔잔한 음악을 틀어줍니다.");
 					System.out.println(music);
 					System.out.println("좋은 꿈이라도 꾼 걸까요?");
@@ -550,6 +600,10 @@ public class Main_final {
 							+ "⡯⣟⣗⣯⣞⣯⢯⡯⣟⣞⣞⡮⣟⡽⣮⢯⣟⡾⣽⢽⡽⡯⣾⣺⣞⣯⢯⡷⣽⣺⢽⣽⣺⣽⣳⢯⡯⣯⣗⡷⡯⡿⣽⣺⣵⢽⡽⣽⢽⡵\n"
 							+ "⢯⣟⡾⣵⢗⣯⢯⢿⢽⣺⣳⣟⣗⡿⡽⣽⣺⡽⣽⢽⣽⣫⢷⣳⣻⣺⡽⣽⣳⢯⣻⣺⣞⣾⣺⡽⣽⣳⢗⡿⡽⡯⣷⣳⢯⡯⣟⡾⣽⢽\n"
 							+ "⡽⡾⡽⣽⢽⣞⢿⢽⢯⢷⣳⣗⡷⣻⢽⣳⢯⢯⢯⣟⢾⣺⢯⢷⣻⣺⢽⣳⢯⣟⣞⣗⢷⣳⢗⣟⣗⡯⡿⣝⡯⣟⢷⢽⡽⣽⣳⢯⡯⣟";
+					if(mp3.isPlaying()) {
+			         	mp3.stop();
+			         }
+			         mp3.play(musicList.get(5).getPath());
 					System.out.println("적당한 크기의 상자를 가져와 고양이를 집어넣습니다.");
 					System.out.println(box);
 					System.out.println("좋은 꿈이라도 꾼 걸까요?");
