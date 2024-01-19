@@ -180,13 +180,13 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀";
 					System.out.println("사료를 주었습니다.");
 					System.out.println(catFood);
+					System.out.println("만족스러운 식사였나봅니다.");
+					System.out.println("고양이가 가르릉 거리는군요.");
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("만족스러운 식사였나봅니다.");
-					System.out.println("고양이가 가르릉 거리는군요.");
 					status(member);
 				} else if (food == 2) {
 					String turu = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠊⠀⡀⢀⣀⡴⠊⠀⠀⠀\n"
@@ -210,13 +210,13 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠶⠟⠁⠀⠀⠙⠚⠖⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
 					System.out.println("츄르를 주었습니다.");
 					System.out.println(turu);
+					System.out.println("만족스러운 식사였나봅니다.");
+					System.out.println("고양이가 가르릉 거리는군요.");
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("만족스러운 식사였나봅니다.");
-					System.out.println("고양이가 가르릉 거리는군요.");
 					status(member);
 				} else if (food == 3) {
 					System.out.println("캔참치");
@@ -236,13 +236,13 @@ public class Main_final {
 							+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿";
 					System.out.println("캔참치를 주었습니다.");
 					System.out.println(can);
+					System.out.println("만족스러운 식사였나봅니다.");
+					System.out.println("고양이가 가르릉 거리는군요.");
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("만족스러운 식사였나봅니다.");
-					System.out.println("고양이가 가르릉 거리는군요.");
 					status(member);
 				} else if (food == 4) {
 					String chicken = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -260,13 +260,13 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
 					System.out.println("닭고기를 주었습니다.");
 					System.out.println(chicken);
+					System.out.println("만족스러운 식사였나봅니다.");
+					System.out.println("고양이가 가르릉 거리는군요.");
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("만족스러운 식사였나봅니다.");
-					System.out.println("고양이가 가르릉 거리는군요.");
 					status(member);
 				} else {
 					System.out.println("줄 수 있는 먹이가 없습니다. . .");
@@ -301,14 +301,14 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
 					System.out.println("고양이가 레이저에 흥미를 보이나 봅니다.");
 					System.out.println(laser);
+					System.out.println("세상에, 정말 즐거웠나보군요.");
+					System.out.println("저 털 헝클어진 것 좀 보세요.");
 					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("세상에, 정말 즐거웠나보군요.");
-					System.out.println("저 털 헝클어진 것 좀 보세요.");
 					status(member);
 				} else if (play == 2) {
 					String tower = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⢶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -333,14 +333,14 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠁⠉⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠉⠀";
 					System.out.println("고양이를 캣 타워에 올려둡니다.");
 					System.out.println(tower);
+					System.out.println("세상에, 정말 즐거웠나보군요.");
+					System.out.println("저 털 헝클어진 것 좀 보세요.");
 					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("세상에, 정말 즐거웠나보군요.");
-					System.out.println("저 털 헝클어진 것 좀 보세요.");
 					status(member);
 				} else if (play == 3) {
 					String fishing = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -372,14 +372,14 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁";
 					System.out.println("낚싯대를 고양이 앞에 흔들어 댑니다.");
 					System.out.println(fishing);
+					System.out.println("세상에, 정말 즐거웠나보군요.");
+					System.out.println("저 털 헝클어진 것 좀 보세요.");
 					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("세상에, 정말 즐거웠나보군요.");
-					System.out.println("저 털 헝클어진 것 좀 보세요.");
 					status(member);
 				} else if (play== 4) {
 					String hideAndSeek = "⡐⢂⠒⡐⢢⠐⡄⠢⡐⠄⢢⠐⡐⢂⠒⡐⢂⠒⣐⢂⠒⡐⢂⡒⡐⢂⠒⡐⣂⠒⡐⢂⡒⡐⢂⠆⡰⢀⠆⠰⡀⠆⡰⠀⢆⠰⣀⠒⡰⢈\n"
@@ -409,14 +409,14 @@ public class Main_final {
 							+ "⠈⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠂⠀⠀⠀⠀⠀⠀⠀⡀⠠⠀⠂⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⢀";
 					System.out.println("간식거리를 흔들어 주의를 끈 다음, 재빨리 다른 곳에 숨습니다.");
 					System.out.println(hideAndSeek);
+					System.out.println("세상에, 정말 즐거웠나보군요.");
+					System.out.println("저 털 헝클어진 것 좀 보세요.");
 					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("세상에, 정말 즐거웠나보군요.");
-					System.out.println("저 털 헝클어진 것 좀 보세요.");
 					status(member);
 				} else {
 					System.out.println("아이참, 이러지 마세요.");
@@ -451,14 +451,14 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠉⠃⠋⠊⠑⠁⠀⠀⠀⠘⠕⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
 					System.out.println("고양이한테 이불을 덮어줍니다.");
 					System.out.println(blanket);
+					System.out.println("좋은 꿈이라도 꾼 걸까요?");
+					System.out.println("꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("좋은 꿈이라도 꾼 걸까요?");
-					System.out.println("꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 					status(member);
 				} else if (nap == 2) {
 					String toy = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⢶⡆⠀⠀⣀⣀⣀⠀⠀\n"
@@ -485,14 +485,14 @@ public class Main_final {
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⠿⣿⣿⣿⣿⡾⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
 					System.out.println("고양이한테 물고기 인형을 안겨줍니다.");
 					System.out.println(toy);
+					System.out.println("좋은 꿈이라도 꾼 걸까요?");
+					System.out.println("꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("좋은 꿈이라도 꾼 걸까요?");
-					System.out.println("꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 					status(member);
 				} else if (nap == 3) {
 					String music = "⠀⠀⢠⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -518,14 +518,14 @@ public class Main_final {
 							+ "⠛⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠶⣶⣤⣤⣤⣤⣤⣤⣤⣤⣼⣤⣾⣶⣾⣤⣤⣤⣠⣤⣤⣤⣤⣾⡿⠷⠿⠿⠿⠿⠿⠿⠿⠛⠛⠛⠛⠛⠃";
 					System.out.println("잔잔한 음악을 틀어줍니다.");
 					System.out.println(music);
+					System.out.println("좋은 꿈이라도 꾼 걸까요?");
+					System.out.println("꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("좋은 꿈이라도 꾼 걸까요?");
-					System.out.println("꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 					status(member);
 				} else if (nap == 4) {
 					String box = "⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⣽⢽⡽⡽\n"
@@ -548,14 +548,14 @@ public class Main_final {
 							+ "⡽⡾⡽⣽⢽⣞⢿⢽⢯⢷⣳⣗⡷⣻⢽⣳⢯⢯⢯⣟⢾⣺⢯⢷⣻⣺⢽⣳⢯⣟⣞⣗⢷⣳⢗⣟⣗⡯⡿⣝⡯⣟⢷⢽⡽⣽⣳⢯⡯⣟";
 					System.out.println("적당한 크기의 상자를 가져와 고양이를 집어넣습니다.");
 					System.out.println(box);
+					System.out.println("좋은 꿈이라도 꾼 걸까요?");
+					System.out.println("꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
 					ocon.checkTired(member);
 					member = mCon.joinMemberDB(member.getId());
-					System.out.println("좋은 꿈이라도 꾼 걸까요?");
-					System.out.println("꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 					status(member);
 				} else {
 					System.out.println("고양이는 지금 장난을 치는 것보단 자고 싶어하는 것 같습니다.");
