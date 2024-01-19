@@ -84,16 +84,14 @@ public class UpdateDAO {
 		getConn();
 		int now = member.getStress();
 		System.out.println(stress);
-		int update = now + stress;
-		System.out.println(update);
-		if(update<0) {
+		if(stress<0) {
 			return 0;
 		} else {
 			int row = 0;
 			try {
 				String sql = "update member_db set c_stress=? where m_id=?";
 				psmt = conn.prepareStatement(sql);
-				psmt.setLong(1, update);
+				psmt.setLong(1, stress);
 				psmt.setString(2, member.getId());
 				row = psmt.executeUpdate();
 				
