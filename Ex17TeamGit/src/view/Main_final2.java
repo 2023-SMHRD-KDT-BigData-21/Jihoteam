@@ -179,6 +179,7 @@ public class Main_final2 {
 					System.out.println(catFood);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
+					ccon.updateTiredConn(member, -1);
 					member = mCon.joinMemberDB(member.getId());
 					System.out.println("만족스러운 식사였나봅니다.");
 					System.out.println("고양이가 가르릉 거리는군요.");
