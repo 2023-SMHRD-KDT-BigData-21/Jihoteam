@@ -43,6 +43,10 @@ public class Main_final {
 	               + " \\ \\___x___/'  \\ \\_\\   \\ \\__\\   \\ \\_\\ \\_\\\\ \\____/ \\ \\____/   \\ \\__\\           \\ \\__/.\\_\\           \\ \\____\\\\ \\__/.\\_\\   \\ \\__\\   \\/\\_\\\n"
 	               + "  \\/__//__/     \\/_/    \\/__/    \\/_/\\/_/ \\/___/   \\/___/     \\/__/            \\/__/\\/_/            \\/____/ \\/__/\\/_/    \\/__/    \\/_/\n"
 	               + "                                                                                                                                      ";
+	         if(mp3.isPlaying()) {
+                 mp3.stop();
+              }
+              mp3.play(musicList.get(8).getPath());
 	         slowPrint(1, title);
 	         System.out.println();
 	         slowPrint(50, "[1]회원가입 [2]로그인 [3]종료 >> ");
@@ -260,12 +264,8 @@ public class Main_final {
 	                     mp3.stop();
 	                  }
 	                  mp3.play(musicList.get(4).getPath());
-	<<<<<<< HEAD
 	               slowPrint(50,"츄르를 주었습니다.");
 	               System.out.println();
-	=======
-	               System.out.println("츄르를 주었습니다.");
-	>>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-BigData-21/Jihoteam.git
 	               System.out.println(turu);
 	               slowPrint(50,"만족스러운 식사였나봅니다.");
 	               System.out.println();
@@ -298,12 +298,8 @@ public class Main_final {
 	                     mp3.stop();
 	                  }
 	                  mp3.play(musicList.get(4).getPath());
-	<<<<<<< HEAD
 	               slowPrint(50,"캔참치를 주었습니다.");
 	               System.out.println();
-	=======
-	               System.out.println("캔참치를 주었습니다.");
-	>>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-BigData-21/Jihoteam.git
 	               System.out.println(can);
 	               slowPrint(50,"만족스러운 식사였나봅니다.");
 	               System.out.println();
@@ -334,12 +330,8 @@ public class Main_final {
 	                     mp3.stop();
 	                  }
 	                  mp3.play(musicList.get(4).getPath());
-	<<<<<<< HEAD
 	               slowPrint(50,"닭고기를 주었습니다.");
-	=======
-	               System.out.println("닭고기를 주었습니다.");
-	>>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-BigData-21/Jihoteam.git
-	               System.out.println(치킨);
+	               System.out.println(chicken);
 	               slowPrint(50,"만족스러운 식사였나봅니다.");
 	               System.out.println();
 	               slowPrint(50,"고양이가 가르릉 거리는군요.");
