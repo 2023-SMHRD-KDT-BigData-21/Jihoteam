@@ -62,27 +62,27 @@ public class CatController {
 		int exp = member.getExp();
 		if(lvl==1) {
 			if(exp>=50) {
-				exp = 0;
+				exp = exp-50;
 				lvl++;
 			}
 		}else if(lvl==2) {
 			if(exp>=70) {
-				exp = 0;
+				exp = exp-70;
 				lvl++;
 			}
 		}else if(lvl==3) {
 			if(exp>=100) {
-				exp = 0;
+				exp = exp-100;
 				lvl++;
 			}
 		}else if(lvl==4) {
-			if(exp>=100) {
-				exp = 0;
+			if(exp>=140) {
+				exp = exp-140;
 				lvl++;
 			}
 		}else if(lvl==5) {
-			if(exp>=100) {
-				exp = 0;
+			if(exp>=200) {
+				exp = exp-200;
 				lvl++;
 			}
 		}
@@ -114,12 +114,6 @@ public class CatController {
 	
 //	피로도 업데이트
 	public String updateTiredConn(MemberVO member, int tired) {
-		if (member.getTired() <= 0) { //피로도가 0이면
-			String result = "실패";
-			System.out.println("잔여 피로도가 없습니다.");
-			int row = udao.updateTired(member, 0);
-			return result;
-		}
 		int row = udao.updateTired(member, tired);
 		String result;
 		if(row>0) {

@@ -44,11 +44,10 @@ public class UpdateDAO {
 	public int updateExp(MemberVO member, int exp) {
 		getConn();
 		int row = 0;
-		int update=member.getExp()+exp;
 		try {
 			String sql = "update member_db set c_exp=? where m_id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setLong(1, update);
+			psmt.setLong(1, member.getExp() + exp);
 			psmt.setString(2, member.getId());
 			row = psmt.executeUpdate();
 
