@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import model.CatDAO;
 import model.CatVO;
-import model.DAO;
 import model.MemberDAO;
 import model.MemberVO;
 import model.UpdateDAO;
@@ -43,17 +42,20 @@ public class CatController {
 	
 //	스트레스 업데이트
 	public String updateStressConn(MemberVO member, int stress) {
-		int row = udao.updateStress(member, stress);
-		String result;
-		if(row>0) {
-			System.out.println("stress 수치 변경");
-			result = "성공";
-			return result;
+		int cur = member.getStress();
+		int update = cur + stress;
+		System.out.println(cur + " "+update);
+		String result = "실패";
+		if(update >= 0) {
+			int row = udao.updateStress(member, update);
+			if(row>0) {
+				System.out.println("stress 수치 변경");
+				result = "성공";
+			}			
 		}else {
 			System.out.println("stress 수치 변경 실패");
-			result = "실패";
-			return result;
 		}
+		return result;			
 	}
 	
 //	레벨업 할지말지 체크

@@ -82,7 +82,6 @@ public class UpdateDAO {
 //	스트레스 수치 업데이트 메소드
 	public int updateStress(MemberVO member, int stress) {
 		getConn();
-		int row = 0;
 		int now = member.getStress();
 		System.out.println(stress);
 		int update = now + stress;
@@ -90,6 +89,7 @@ public class UpdateDAO {
 		if(update<0) {
 			return 0;
 		} else {
+			int row = 0;
 			try {
 				String sql = "update member_db set c_stress=? where m_id=?";
 				psmt = conn.prepareStatement(sql);
