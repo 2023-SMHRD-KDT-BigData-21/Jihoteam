@@ -82,26 +82,20 @@ public class UpdateDAO {
 //	스트레스 수치 업데이트 메소드
 	public int updateStress(MemberVO member, int stress) {
 		getConn();
-		int now = member.getStress();
-		System.out.println(stress);
-		if(stress<0) {
-			return 0;
-		} else {
-			int row = 0;
-			try {
-				String sql = "update member_db set c_stress=? where m_id=?";
-				psmt = conn.prepareStatement(sql);
-				psmt.setLong(1, stress);
-				psmt.setString(2, member.getId());
-				row = psmt.executeUpdate();
+		int row = 0;
+		try {
+			String sql = "update member_db set c_stress=? where m_id=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setLong(1, stress);
+			psmt.setString(2, member.getId());
+			row = psmt.executeUpdate();
 				
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				getClose();
-			} // try-catch
-			return row;
-		}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		} // try-catch
+		return row;
 	} // updateStress
 
 //	Tired 수치 업데이트 메소드

@@ -44,7 +44,7 @@ public class CatController {
 	public String updateStressConn(MemberVO member, int stress) {
 		int cur = member.getStress();
 		int update = cur + stress;
-		System.out.println(cur + " "+update);
+		System.out.println(member.getId()+cur + " "+update);
 		String result = "실패";
 		if(update >= 0) {
 			int row = udao.updateStress(member, update);

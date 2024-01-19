@@ -233,6 +233,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"고양이가 가르릉 거리는군요.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -270,6 +271,7 @@ public class Main_final {
 	               slowPrint(50,"만족스러운 식사였나봅니다.");
 	               System.out.println();
 	               slowPrint(50,"고양이가 가르릉 거리는군요.");
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -305,6 +307,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"고양이가 가르릉 거리는군요.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -336,6 +339,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"고양이가 가르릉 거리는군요.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -389,6 +393,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"저 털 헝클어진 것 좀 보세요.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -430,6 +435,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"저 털 헝클어진 것 좀 보세요.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -478,6 +484,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"저 털 헝클어진 것 좀 보세요.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -524,6 +531,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"저 털 헝클어진 것 좀 보세요.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -579,6 +587,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -622,6 +631,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
@@ -703,6 +713,7 @@ public class Main_final {
 	               System.out.println();
 	               slowPrint(50,"꼬리를 살랑살랑 흔드는 모습이 정말 귀엽습니다.");
 	               System.out.println();
+	               member = mCon.joinMemberDB(member.getId());
 	               ccon.updateStressConn(member, -5);
 	               ccon.updateExpConn(member, 10);
 	               ccon.checkLvlConn(member);
