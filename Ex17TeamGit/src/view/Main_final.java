@@ -14,6 +14,7 @@ public class Main_final {
 	static Scanner sc = new Scanner(System.in);//
 	static MemberController mCon = new MemberController();//
 	static CatController ccon = new CatController();
+	static Controller ocon = new Controller();
 
 	public static void main(String[] args) {
 		ArrayList<CatVO> typeList = new ArrayList<CatVO>();
@@ -139,6 +140,7 @@ public class Main_final {
 
 	public static void game(MemberVO member) {
 		while (true) {
+			ocon.randomEvent(member);
 			System.out.println("무엇을 하시겠습니까?");
 			System.out.print("[1]먹이주기 [2]놀아주기 [3]낮잠자기 [4]종료 >> ");
 			int menu3 = sc.nextInt();
