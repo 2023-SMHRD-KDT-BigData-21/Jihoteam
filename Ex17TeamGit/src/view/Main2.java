@@ -340,8 +340,8 @@ public class Main2 {
 								} // 놀아주기
 								else if (menu3 == 3) {// 낮잠자기
 									System.out.println("잠자리가 편치않은 모양일까요?");
-									System.out.println("잠이 안 오는 것 같으니 뭐라도 곁에 두는 게 좋을지도 모릅니다.");
-									System.out.println("======어떤 걸 주시겠습니까?======");
+									System.out.println("잠이 안 오는 것 같으니 뭐라도 해주는게 좋을지도 모릅니다.");
+									System.out.println("======어떻게 하시겠습니까?======");
 									System.out.println("[1]따뜻하게 이불을 덮어준다.");
 									System.out.println("[2]봉제인형을 옆에 둔다.");
 									System.out.println("[3]잔잔한 음악을 틀어준다.");
