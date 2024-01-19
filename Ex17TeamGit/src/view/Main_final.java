@@ -182,6 +182,7 @@ public class Main_final {
 					System.out.println(catFood);
 					System.out.println("만족스러운 식사였나봅니다.");
 					System.out.println("고양이가 가르릉 거리는군요.");
+					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
@@ -212,6 +213,7 @@ public class Main_final {
 					System.out.println(turu);
 					System.out.println("만족스러운 식사였나봅니다.");
 					System.out.println("고양이가 가르릉 거리는군요.");
+					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
@@ -238,6 +240,7 @@ public class Main_final {
 					System.out.println(can);
 					System.out.println("만족스러운 식사였나봅니다.");
 					System.out.println("고양이가 가르릉 거리는군요.");
+					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);
@@ -262,6 +265,7 @@ public class Main_final {
 					System.out.println(chicken);
 					System.out.println("만족스러운 식사였나봅니다.");
 					System.out.println("고양이가 가르릉 거리는군요.");
+					ccon.updateStressConn(member, -5);
 					ccon.updateExpConn(member, 10);
 					ccon.checkLvlConn(member);
 					ccon.updateTiredConn(member, -1);

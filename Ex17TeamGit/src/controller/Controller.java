@@ -106,19 +106,19 @@ public class Controller {
 			System.out.println("피로도가 0이 되었습니다.");
 			System.out.println("강제 취침을 시작합니다.");
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			System.out.println(tired);
+			System.out.println("충전중...");
 			udao.updateDate(member, 1);
 			udao.updateTired(member, 6);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println("====================================");
 			System.out.println("피로가 충전되어 개운한 " + member.getName());
 			String getUp = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣾⡿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⣿⣷⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⣴⣶⣶⡆⢠⣿⣿⣷⠀⢸⣿⣿⡇⢰⣿⣿⣷⢸⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -143,15 +143,10 @@ public class Controller {
 					+ "⣾⡿⠻⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠟⠉⠀⠀⠀⠀⠀⠸⣿⣆⠀⢀⣼⣿⣿⠁⢹⣿⣿⡇⠀⢹⣿⣿⣀⣾⡿⠁\r\n"
 					+ "⢿⣷⣤⣈⣻⣿⣶⣶⣤⣄⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣿⣿⣀⠀⠀⢀⣀⣠⣴⣤⣾⣿⣿⣿⣿⣿⠃⠀⢸⣿⣿⡇⣀⣸⣿⣿⣿⠟⠁⠀\r\n"
 					+ "⠀⠙⠛⠿⠿⠟⠛⠛⠛⠻⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠻⠿⣿⣿⡿⠿⠟⠛⠛⠉⠉⠉⠛⠻⠿⢿⣿⣿⣿⣿⣿⠿⠿⠛⠉⠀";
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
 			System.out.println(getUp);
 			System.out.println("피로도가 7로 충전되고, 고양이 키운지 +" + (member.getDate() + 1) + "일이 되었습니다!");
 			System.out.println("이제 다시 게임을 시작해 보세요!");
-		}
-	};
+		} //if
+	} //checkTired
 
 }
