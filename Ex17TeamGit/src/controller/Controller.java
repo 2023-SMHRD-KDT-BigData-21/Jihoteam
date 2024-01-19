@@ -13,13 +13,14 @@ public class Controller {
 	DAO dao = new DAO();
 	MemberDAO mdao = new MemberDAO();
 	UpdateDAO udao = new UpdateDAO();
+	
 	//랜덤이벤트 메소드
 	public void randomEvent(MemberVO member) {
 		MemberVO info = mdao.selectMem(member.getId());
 		Random ran = new Random();
 		int stress = info.getStress();
 		String name = info.getName();
-		int num = ran.nextInt(1, 11); // 랜덤이벤트 발생할지 정하는 변수
+		int num = ran.nextInt(1, 3); // 랜덤이벤트 발생할지 정하는 변수
 		if (num == 1) {
 			System.out.println("랜덤이벤트 발생!!");
 			int num2 = ran.nextInt(1, 7); // 랜덤이벤트가 발생했을시 준비된 랜덤 이벤트 시나리오중 하나를 랜덤으로 뽑는 변수
