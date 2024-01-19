@@ -29,22 +29,22 @@ public class CatController {
 		}
 		int row = cdao.enrollCat(member, type, name);
 		String result;
-		if(row>0) {
+//		if(row>0) {
 //			System.out.println("고양이 입력 성공");
 //			result = "성공";
 //			return result;
-		}else {
+//		}else {
 //			System.out.println("고양이 입력 실패");
 //			result = "실패";
 //			return result;
-		}
+//		}
 	}
 	
 //	스트레스 업데이트
 	public void updateStressConn(MemberVO member, int stress) {
 		int cur = member.getStress();
 		int update = cur + stress;
-		System.out.println(member.getId()+cur + " "+update);
+//		System.out.println(member.getId()+cur + " "+update);
 //		String result = "실패";
 		if(update >= 0) {
 			int row = udao.updateStress(member, update);
@@ -52,7 +52,9 @@ public class CatController {
 //				System.out.println("stress 수치 변경");
 //				result = "성공";
 //			}			
-		}else {
+		} else if(update < 0){
+			int row = udao.updateStress(member, 0);
+		} else {
 //			System.out.println("stress 수치 변경 실패");
 		}
 //		return result;			

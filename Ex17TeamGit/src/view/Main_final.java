@@ -152,14 +152,16 @@ public class Main_final {
 	   public static void doDelete(MemberVO member) {
 
 	      System.out.println("==회원탈퇴==");
-	      System.out.println("탈퇴할 ID : ");
+	      System.out.print("탈퇴할 ID : ");
 	      String id = sc.next();
-	      System.out.println("탈퇴 확인 PW : ");
+	      System.out.print("탈퇴 확인 PW : ");
 	      String pw = sc.next();
 
 	      if (id.equals(member.getId()) && pw.equals(member.getPw())) {
-	         String isSuccess = mCon.deleteConn(member);
+	    	  String isSuccess = mCon.deleteConn(member);
 	         System.out.println(String.format("탈퇴에 %s하였습니다", isSuccess));
+	      }else {
+	    	  System.out.println("아이디 혹은 비밀번호를 다시 한 번 확인해 보세요!");
 	      }
 	      // DB에서 id, pw 대조
 	   }
